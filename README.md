@@ -1,5 +1,5 @@
 # management-shop
-  This is a Vue-Admin application about backend management
+  
 ## Project setup
 ```
 npm install
