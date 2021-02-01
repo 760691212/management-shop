@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-scrollbar wrap-class="scrollbar-wrapper">
+    <el-scrollbar wrap-class="scrollbar-wrapper no-select">
       <!-- <logo v-if="true" :collapse="false" /> -->
       <el-menu
         :default-active="activeMenu"
@@ -20,7 +20,7 @@
 <script>
 import { mapGetters } from 'vuex'
 import Logo from './logo'
-import variables from '@/styles/variables.scss'
+import variables from '@/assets/styles/variables.scss'
 import sidebarItem from './sidebarItem'
 export default {
   name: 'Sidebar',
@@ -46,7 +46,7 @@ export default {
         return meta.activeMenu
       }
       return path
-    }
+    },
   },
 }
 </script>
