@@ -2,7 +2,7 @@
   <div class="app-layout">
      <sidebar class="sidebar-container" />
      <div class="main-container">
-
+       <div></div>
      </div>
   </div>
 </template>
