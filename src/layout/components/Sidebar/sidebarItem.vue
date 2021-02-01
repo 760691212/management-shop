@@ -1,15 +1,24 @@
 <template>
   <div v-if="!item.hidden">
     <template v-if="!item.alwaysShow && hasChildNode(item.children,item) && (!child.children || child.noChildren)">
-    </template>
-    <el-menu-item>{{item}}</el-menu-item>
-    
+      <app-link v-if="child.meta" :to="resolvePath(child.path)">
+        <el-menu-item :index="resolvePath(child.path)">
+          <item :icon="child.meta.icon||(item.meta && item.meta.icon)" :title="child.meta.title" />
+        </el-menu-item>
+      </app-link>
+    </template>    
   </div>
 </template>
 <script>
+import path from 'path'
 import { isExternal } from '@/utils/validate'
+import AppLink from './link'
+import Item from './item'
 export default {
   name: 'SidebarItem',
+  components:{
+    AppLink,Item
+  },
   props:{
     item: {
       type: Object,
@@ -25,11 +34,6 @@ export default {
       child: null,
     }
   },
-  computed:{
-    isExternal(){
-      return isExternal()
-    }
-  },
   methods:{
     /**
      * 判断是否有唯一子节点，没有返回本身，有，返回子节点，有多个子节点则返回 false
@@ -42,7 +46,7 @@ export default {
         }
       })
       if(showingChildren.length === 1){
-        this.child = kids[0]
+        this.child = showingChildren[0]
         return true
       }
       if(showingChildren.length === 0){
@@ -65,5 +69,4 @@ export default {
       }
     }
   }
-}
 </script>

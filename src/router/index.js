@@ -33,7 +33,7 @@ export const constantRoutes = [
       component: () => import('@/views/dashboard/index'),
       name: 'Dashboard',
       meta: {
-        title: 'Dashboard',
+        title: '首页',
         icon: 'dashboard',
         affix: true
       }
