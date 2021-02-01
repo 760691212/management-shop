@@ -1,14 +1,23 @@
 <template>
   <div class="app-layout">
      <sidebar class="sidebar-container" />
+     <div class="main-container">
+
+     </div>
   </div>
 </template>
 <script>
 import { Sidebar } from './components'
+import { mapState } from 'vuex'
 export default {
   name: 'Layout',
   components:{
     Sidebar
+  },
+  computed: {
+    ...mapState({
+      sidebar : state => state.app.sidebar,
+    })
   },
   data() {
     return{
