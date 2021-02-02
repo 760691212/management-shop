@@ -48,12 +48,13 @@ export default {
         firstTag = tagList[0]
         lastTag = tagList[tagList.length - 1]
       }
-
       if (firstTag === currentTag) {
         $scrollWrapper.scrollLeft = 0
       } else if (lastTag === currentTag) {
+
         $scrollWrapper.scrollLeft = $scrollWrapper.scrollWidth - $containerWidth
       } else {
+
         // find preTag and nextTag
         const currentIndex = tagList.findIndex(item => item === currentTag)
         const prevTag = tagList[currentIndex - 1]
@@ -64,7 +65,7 @@ export default {
 
         // the tag's offsetLeft before of prevTag
         const beforePrevTagOffsetLeft = prevTag.$el.offsetLeft - tagAndTagSpacing
-
+        
         if (afterNextTagOffsetLeft > $scrollWrapper.scrollLeft + $containerWidth) {
           $scrollWrapper.scrollLeft = afterNextTagOffsetLeft - $containerWidth
         } else if (beforePrevTagOffsetLeft < $scrollWrapper.scrollLeft) {

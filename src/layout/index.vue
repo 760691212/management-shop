@@ -1,38 +1,39 @@
 <template>
   <div class="app-layout" :class="layoutStatus">
      <sidebar class="sidebar-container" />
-     <div class="main-container">
-        <navbar/>
-        <tags-view />
-     </div>
+      <div class="h c layout">
+        <sidebar class="sidebar-container" />
+        <div class="main-container v flex">
+          <div class="v">
+            <navbar />
+            <tags-view v-if="needTagsView"/>
+          </div>
+          <app-main class="flex"/>
+       </div>
+    </div>
   </div>
 </template>
 <script>
-import { Sidebar , Navbar, TagsView } from './components'
+import { Sidebar , Navbar, TagsView, AppMain } from './components'
 import { mapState } from 'vuex'
 export default {
   name: 'Layout',
   components:{
-    Sidebar, Navbar, TagsView
+    Sidebar, Navbar, TagsView, AppMain
   },
   computed: {
     ...mapState({
       sidebar : state => state.app.sidebar,
+      device: state => state.app.device,
+      needTagsView: state => state.settings.tagsView,
     }),
     layoutStatus(){
       return {
         foldSidebar: !this.sidebar.opened, // 折叠
-        // openSidebar: this.sidebar.opened, // 打开
-        // withoutAnimation: this.sidebar.withoutAnimation,
-        // mobile: this.device === 'mobile'
+        openSidebar: this.sidebar.opened, // 打开
       }
     }
   },
-  data() {
-    return{
-      
-    }
-  }
 }
 </script>
 <style lang="scss" scoped>
@@ -43,19 +44,9 @@ export default {
     position: relative;
     height: 100%;
     width: 100%;
-    
-    .fixed-header {
-      position: fixed;
-      top: 0;
-      right: 0;
-      z-index: 9;
-      width: calc(100% - #{$sideBarWidth});
-      transition: width 0.28s;
+    .layout{
+      width: 100%;
+      height: 100%;
     }
-
-    .foldSidebar .fixed-header{
-       width: calc(100% - 54px)
-    }
-
 }
 </style>

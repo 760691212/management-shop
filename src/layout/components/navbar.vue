@@ -116,6 +116,7 @@ export default {
     }
 }
 .navbar{
+    min-width: 700px;
     height: 50px;
     overflow: hidden;
     position: relative;
