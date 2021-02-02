@@ -302,7 +302,12 @@
 .op-80 {
   opacity: .8;
 }
-
+.no-margin{
+  margin: 0;
+}
+.margin-10-0{
+  margin: 10px 0;
+}
 .gap-small {
   margin-top: 5px;
 }
@@ -322,6 +327,9 @@
   -khtml-user-select: none; /*早期浏览器*/
   -o-user-select: none; /* Opera*/
   user-select: none;
+}
+.cursor{
+  cursor: pointer;
 }
 
 

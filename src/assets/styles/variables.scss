@@ -24,9 +24,15 @@ $sideBarWidth: 210px;
 // navbar
 $navbarBg:#fff;
 $navbarBoxshadow: 0 1px 4px rgba(0,21,41,.08);
+$hamburgerColor: #5a5e66;
+$screenfullColor:  $hamburgerColor;
+// clock
+$clockColor: $hamburgerColor;
+$clockTextShadow: #0234637a;
+$clockTextBrightness: rgba(119, 178, 218, 0.295);
+// LoginUser
+$loginUserColor: $hamburgerColor;
 
-// the :export directive is the magic sauce for webpack
-// https://www.bluematador.com/blog/how-to-share-variables-between-js-and-sass
 :export {
   menuText: $menuText;
   menuActiveText: $menuActiveText;
@@ -36,4 +42,5 @@ $navbarBoxshadow: 0 1px 4px rgba(0,21,41,.08);
   subMenuBg: $subMenuBg;
   subMenuHover: $subMenuHover;
   sideBarWidth: $sideBarWidth;
+  hamburgerColor: $hamburgerColor;
 }
