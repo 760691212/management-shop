@@ -47,7 +47,7 @@
                 </div>
                 <template slot="reference">
                     <div class="notification">
-                        <el-badge :value="120" :max="99"  class="badge">
+                        <el-badge :value="120" :max="99" hidden class="badge">
                             <notification id="notification"  class="item el-dropdown-link right-menu-item hover-effect"/>
                         </el-badge>
                     </div>

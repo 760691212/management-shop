@@ -3,16 +3,17 @@
      <sidebar class="sidebar-container" />
      <div class="main-container">
         <navbar/>
+        <tags-view />
      </div>
   </div>
 </template>
 <script>
-import { Sidebar , Navbar} from './components'
+import { Sidebar , Navbar, TagsView } from './components'
 import { mapState } from 'vuex'
 export default {
   name: 'Layout',
   components:{
-    Sidebar, Navbar
+    Sidebar, Navbar, TagsView
   },
   computed: {
     ...mapState({

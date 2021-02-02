@@ -32,6 +32,18 @@ $clockTextShadow: #0234637a;
 $clockTextBrightness: rgba(119, 178, 218, 0.295);
 // LoginUser
 $loginUserColor: $hamburgerColor;
+// tagsView
+$activetagsViewBg: #0b6294;
+$activetagsViewfontColor: #fff;
+$activecontextmenuBg: $navbarBg;
+$activecontextmenufc: #333;
+$tagsViewItemBorder:  #d4cfcf;
+$tagsViewItemColor: #495060;
+$tagsViewItemBg:  #fff;
+$tagsbarBg:  rgb(247, 247, 247);
+$tagsbarBorBc:  #d8dce5;
+$tagsbarBoxShadow:  0 1px 3px 0 rgba(0, 0, 0, 0.185), 0 0 3px 0 rgba(0, 0, 0, .04);
+$tagsbarBg:  rgb(247, 247, 247);
 
 :export {
   menuText: $menuText;
