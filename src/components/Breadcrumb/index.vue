@@ -9,7 +9,7 @@
     </el-breadcrumb>
 </template>
 <script>
-import pathToRegexp from 'path-to-regexp'
+import * as pathToRegexp from 'path-to-regexp'
 export default {
     name: 'Breadcrumb',
     data() {
@@ -51,7 +51,12 @@ export default {
                 return
             }
             this.$router.push(this.pathCompile(path))
-        }
+        },
+        pathCompile(path) {
+            const { params } = this.$route
+            var toPath = pathToRegexp.compile(path)
+            return toPath(params)
+        },
     }
 }
 </script>

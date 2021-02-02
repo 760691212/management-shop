@@ -1,8 +1,8 @@
 <template>
-  <div class="app-container">dash</div>
+    <div class="app-container">menu</div>
 </template>
 <script>
 export default {
-  name: 'Dashboard'
+    name: 'Menu'
 }
 </script>

@@ -2,6 +2,11 @@ import Vue from "vue";
 import Router from "vue-router";
 import Layout from '@/layout'
 
+const originalPush = Router.prototype.push
+Router.prototype.push = function push(location) {
+    return originalPush.call(this, location).catch(err => err)
+}
+
 Vue.use(Router);
 
 export const constantRoutes = [
@@ -39,6 +44,24 @@ export const constantRoutes = [
       }
     }]
   },
+    {
+      path: '/system',
+      component: Layout,
+      meta: {
+        title: '系统设置',
+        icon: 'system'
+      },
+      alwaysShow: true,
+      children: [{
+        path: 'menu',
+        component: () => import('@/views/system/menu/index'),
+        name: 'Menu',
+        meta: {
+          title: '菜单',
+          icon: 'menu'
+        }
+      }],
+  }
 ]
 
 const createRouter = () => new Router({
