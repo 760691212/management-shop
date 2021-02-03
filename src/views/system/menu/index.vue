@@ -1,7 +1,7 @@
 <template>
    <div class="flex app-container">
       <div class="container-main">
-          菜单
+          
       </div>
   </div>
 </template>

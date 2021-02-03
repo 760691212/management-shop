@@ -125,6 +125,7 @@ aside {
   padding: 7px;
   overflow-x: hidden;
   overflow-y: auto;
+  background-color: $containerBg;
   flex: 1;
 }
 .container-scrollbar{
@@ -136,9 +137,9 @@ aside {
   overflow-x: hidden;
   overflow-y: auto;
   border-radius: 15px;
-  box-shadow: 0 0 5px #a3a3a3;
+  box-shadow: 0 0 5px $cteMainboxShadow;
   padding: 10px;
-  background-color: rgb(241, 241, 241);
+  background-color: $cteMainBg;
 }
 
 .components-container {
