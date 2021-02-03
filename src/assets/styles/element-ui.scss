@@ -18,6 +18,9 @@
 }
 
 .el-scrollbar__wrap{ overflow-x: hidden; }
+.el-popper.highest .el-scrollbar__wrap {
+  height: 340px;
+}
 
 .el-upload {
   input[type="file"] {
@@ -95,4 +98,43 @@
 // to fix el-date-picker css style
 .el-range-separator {
   box-sizing: content-box;
+}
+.el-table--small {
+  font-size: 1rem;
+  color: #303133;
+}
+.el-table-column--selection .cell {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.el-table__row.disabled-row {
+  pointer-events: none;
+
+  .cell {
+    opacity: .5;
+  }
+}
+
+.el-table th.is-leaf, .el-table td {
+  border-bottom: 1px solid $tableColor;
+}
+.el-table {
+  border-radius: 5px;
+  overflow: hidden;
+}
+.el-table th{
+  background-color:$tableHeaderBg;
+  border-color: none;
+  color: #fff;
+  font-size: larger;
+  padding: 4px 0;
+  font-weight: bold;
+}
+.el-checkbox__input.is-indeterminate .el-checkbox__inner,
+.el-checkbox__input.is-checked .el-checkbox__inner{
+  border-color:  $tableCheckbox;
+  color: $tableCheckbox;
+  background-color: $tableCheckbox;
+
 }

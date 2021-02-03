@@ -10,6 +10,8 @@ $panGreen: #30B08F;
 $write: #e8e8e8;
 
 
+
+
 // sidebar
 $menuText:#f3f3f3;
 $menuActiveText:#ff502f;
@@ -51,7 +53,7 @@ $tagsbarBg:  rgb(247, 247, 247);
 // container
 $containerBg: #fff;
 // container-main
-$cteMainboxShadow: #a3a3a3;
+$cteMainboxShadow: #115363c2;
 $cteMainBg: rgb(241, 241, 241);
 
 
@@ -68,7 +70,7 @@ $download-bg: #F7B32D;
 $search-bg: #2CC0B3;
 // button active
 $active-fc: #F8F9FC;
-$active-fbg: #0098acab;
+$active-fbg: #13cfa6;
 // button hover
 $add-hg: #348498;
 $update-hg: #39BBE6;
@@ -76,6 +78,11 @@ $del-hg: #EF5151;
 $uploading-hg: #B19366;
 $download-hg: #FBC761;
 $search-hg: #5ee0D6;
+
+// table
+$tableColor: #1facc586; 
+$tableHeaderBg:#0081a1; 
+$tableCheckbox: $menuBg;
 
 :export {
   menuText: $menuText;

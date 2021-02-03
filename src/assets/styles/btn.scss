@@ -19,6 +19,26 @@
   }
 }
 
+@mixin specialBtnCircle($fc, $bg, $hg) {
+  background: $bg;
+  color: $fc;
+  border: none;
+  width: 26px !important;
+  height: 26px !important;
+  transition: 500ms ease all;
+  font-weight: bold !important;
+  letter-spacing:2px;
+  text-align: center;
+  &:hover {
+    color: $fc;
+    background-color: $hg;
+  }
+  &:focus{
+    color: $active-fc;
+    background-color: $active-fbg;
+  }
+}
+
 .add-btn {
   @include specialBtn($btn-color,$add-bg,$add-hg)
 }
@@ -36,6 +56,25 @@
 }
 .search-btn {
   @include specialBtn($btn-color,$search-bg,$search-hg)
+}
+
+.add-btn-circle {
+  @include specialBtnCircle($btn-color,$add-bg,$add-hg)
+}
+.update-btn-circle {
+  @include specialBtnCircle($btn-color,$update-bg,$update-hg)
+}
+.del-btn-circle {
+  @include specialBtnCircle($btn-color,$del-bg,$del-hg)
+}
+.uploading-btn-circle {
+  @include specialBtnCircle($btn-color,$uploading-bg,$uploading-hg)
+}
+.download-btn-circle {
+  @include specialBtnCircle($btn-color,$download-bg,$download-hg)
+}
+.search-btn-circle {
+  @include specialBtnCircle($btn-color,$search-bg,$search-hg)
 }
 
 .pan-btn {

@@ -57,7 +57,7 @@ export const constantRoutes = [
         component: () => import('@/views/system/menu/index'),
         name: 'Menu',
         meta: {
-          title: '菜单',
+          title: '菜单管理',
           icon: 'menu'
         }
       }],
