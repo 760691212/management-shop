@@ -7,25 +7,38 @@ $green: #30B08F;
 $tiffany: #4AB7BD;
 $yellow:#FEC171;
 $panGreen: #30B08F;
+$write: #e8e8e8;
+
+// button
+$add: #2d4059;
+$update: #16c79a;
+$del: #a20a0a;
+$uploading: #e8e8e8;
+$download: #f05454;
+$search: #008891;
+// button :active
+$activeBtnBc: #11e9a8; 
+$activeBtnFc: $write;
 
 // sidebar
-$menuText:#bfcbd9;
-$menuActiveText:#409EFF;
+$menuText:#f3f3f3;
+$menuActiveText:#ff502f;
 $subMenuActiveText:#f4f4f5; // https://github.com/ElemeFE/element/issues/12951
 
-$menuBg:#304156;
-$menuHover:#263445;
+$menuBg:#115363;
+$menuHover: linear-gradient(-57deg, #115363 32%, #002F3D 7%);
 
-$subMenuBg:#1f2d3d;
-$subMenuHover:#001528;
+$subMenuBg:#053944; 
+$subMenuHover: linear-gradient(-57deg, #053944 32%, #002530 7%);
 
 $sideBarWidth: 210px;
 // breadcrumbhover
-$breadcrumbhover: #14dbb0;
+$breadcrumbhover: #ff502f;
+$breadcrumbcolor: #1facc5;
 // navbar
 $navbarBg:#fff;
 $navbarBoxshadow: 0 1px 4px rgba(0,21,41,.08);
-$hamburgerColor: #5a5e66;
+$hamburgerColor: #115363;
 $screenfullColor:  $hamburgerColor;
 // clock
 $clockColor: $hamburgerColor;
@@ -34,12 +47,12 @@ $clockTextBrightness: rgba(119, 178, 218, 0.295);
 // LoginUser
 $loginUserColor: $hamburgerColor;
 // tagsView
-$activetagsViewBg: #0b6294;
+$activetagsViewBg: #115363;
 $activetagsViewfontColor: #fff;
 $activecontextmenuBg: $navbarBg;
-$activecontextmenufc: #333;
+$activecontextmenufc: #1facc5;
 $tagsViewItemBorder:  #d4cfcf;
-$tagsViewItemColor: #495060;
+$tagsViewItemColor: #1facc5;
 $tagsViewItemBg:  #fff;
 $tagsbarBg:  rgb(247, 247, 247);
 $tagsbarBorBc:  #d8dce5;

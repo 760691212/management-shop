@@ -71,21 +71,61 @@
     .submenu-title-noDropdown,
     .el-submenu__title {
       &:hover {
-        background-color: $menuHover !important;
+        z-index:1;
+        background: transparent !important;
       }
+      &:after, &:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+        z-index:-2;
+      }
+      &:before {
+          transition: .4s ease;
+          background: $menuHover;
+          z-index:-1;
+      }
+      &:hover:after,&:hover:before {
+          width: 100%;
+      }
+
     }
 
     .is-active>.el-submenu__title {
       color: $subMenuActiveText !important;
     }
+    .nest-menu > a{
+       background: $subMenuBg !important;
+    }
 
     & .nest-menu .el-submenu>.el-submenu__title,
     & .el-submenu .el-menu-item {
       min-width: $sideBarWidth !important;
-      background-color: $subMenuBg !important;
+      background: $subMenuBg !important;
 
       &:hover {
-        background-color: $subMenuHover !important;
+        z-index:1;
+        background: transparent !important;
+      }
+      &:after, &:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+        z-index:-2;
+      }
+      &:before {
+          transition: .4s ease;
+          background: $subMenuHover;
+          z-index:-1;
+      }
+      &:hover:after,&:hover:before {
+          width: 100%;
       }
     }
   }
@@ -199,9 +239,26 @@
   .nest-menu .el-submenu>.el-submenu__title,
   .el-menu-item {
     &:hover {
-      // you can use $subMenuHover
-      background-color: $menuHover !important;
+       z-index:1;
+      background: transparent !important;
     }
+    &:after, &:before{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 100%;
+        z-index:-2;
+      }
+      &:before {
+          transition: .4s ease;
+          background: $menuHover;
+          z-index:-1;
+      }
+      &:hover:after,&:hover:before {
+          width: 100%;
+      }
   }
 
   // the scroll bar appears when the subMenu is too long

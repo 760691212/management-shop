@@ -13,6 +13,22 @@
   }
 }
 
+@mixin specialBtn($fc, $bg) {
+  background: $bg;
+  color: $fc;
+  border: none;
+  transition: 500ms ease all;
+  &:hover {
+    color: $bg;
+    background-color: $fc;
+  }
+  &:focus{
+    color: $activeBtnFc;
+    background-color: $activeBtnBc;
+    transition: 500ms ease all;
+  }
+}
+
 .blue-btn {
   @include colorBtn($blue)
 }
@@ -40,6 +56,11 @@
 .yellow-btn {
   @include colorBtn($yellow)
 }
+
+.add-btn{
+  @include specialBtn($write, $add)
+}
+
 
 .pan-btn {
   font-size: 14px;

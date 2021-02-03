@@ -1,3 +1,4 @@
+
 .bud {
   font-family: bud;
 }
@@ -353,12 +354,4 @@
   &:hover::-webkit-scrollbar-thumb {
     background-color: rgba(0, 0, 0, .3);
   }
-}
-
-.app-context-main{
-  overflow: hidden;
-  flex-grow: 1 !important;
-  flex-shrink: 1 !important;
-  background-color: #fff;
-  flex-wrap: wrap ;
 }

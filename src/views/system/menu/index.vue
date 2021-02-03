@@ -1,7 +1,7 @@
 <template>
    <div class="flex app-container">
       <div class="container-main">
-          
+           <el-button class="add-btn" size="small" round>新增</el-button>
       </div>
   </div>
 </template>
@@ -11,7 +11,4 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.box{
-    width: 100px;
-}
 </style>

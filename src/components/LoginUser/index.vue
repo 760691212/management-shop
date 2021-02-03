@@ -25,8 +25,8 @@ export default {
     background-size: 100% 100%;
     &:hover{
       transform: scale(1.2);
-      box-shadow:0 0 6px #00ffbfd7 inset;
-      box-shadow:0 0 6px #00ffbfd7
+      box-shadow:0 0 3px #00d9ffa2 inset;
+      box-shadow:0 0 9px #00d9ffa2
     }
   }
 }

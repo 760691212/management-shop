@@ -54,7 +54,7 @@
                 </template>
             </el-popover>
             <el-dropdown >
-                <login-user class="el-dropdown-link right-menu-item hover-effect"/>
+                <login-user class="el-dropdown-link right-menu-item"/>
                 <el-dropdown-menu slot="dropdown" style="margin-top: -10px">
                     <el-dropdown-item>个人中心</el-dropdown-item>
                     <el-dropdown-item>注销登录</el-dropdown-item>

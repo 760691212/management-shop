@@ -3,10 +3,20 @@
 .el-breadcrumb__inner,
 .el-breadcrumb__inner a {
   font-weight: 500 !important;
+    color: $breadcrumbcolor;
+    font-weight: bold;
   &:hover{
     color: $breadcrumbhover;
   }
 }
+.el-dropdown-menu__item{
+  transition: background .3s ease;
+  &:hover{
+    color: #fff !important;
+    background-color: $menuBg !important;
+  }
+}
+
 .el-scrollbar__wrap{ overflow-x: hidden; }
 
 .el-upload {
