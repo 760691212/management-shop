@@ -7,6 +7,7 @@
     color: $breadcrumbhover;
   }
 }
+.el-scrollbar__wrap{ overflow-x: hidden; }
 
 .el-upload {
   input[type="file"] {

@@ -6,7 +6,7 @@
         <navbar />
         <tags-view v-if="needTagsView"/>
       </div>
-      <app-main class="flex"/>
+        <app-main/>
     </div>
   </div>
 </template>

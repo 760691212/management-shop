@@ -1,6 +1,9 @@
 <template>
-    <div class="app-container">
-    </div>
+   <div class="flex app-container">
+      <div class="container-main">
+          菜单
+      </div>
+  </div>
 </template>
 <script>
 export default {
@@ -8,7 +11,7 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.system-menu{
-    background-color: #159852;
+.box{
+    width: 100px;
 }
 </style>
