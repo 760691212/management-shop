@@ -9,16 +9,6 @@ $yellow:#FEC171;
 $panGreen: #30B08F;
 $write: #e8e8e8;
 
-// button
-$add: #2d4059;
-$update: #16c79a;
-$del: #a20a0a;
-$uploading: #e8e8e8;
-$download: #f05454;
-$search: #008891;
-// button :active
-$activeBtnBc: #11e9a8; 
-$activeBtnFc: $write;
 
 // sidebar
 $menuText:#f3f3f3;
@@ -63,6 +53,29 @@ $containerBg: #fff;
 // container-main
 $cteMainboxShadow: #a3a3a3;
 $cteMainBg: rgb(241, 241, 241);
+
+
+
+// button 
+$btn-color: #F8F9FC;
+$btnShadow: #808080;
+
+$add-bg: $menuBg;
+$update-bg: #F7B32D;
+$del-bg: #DE1B1B;
+$uploading-bg: #623f2b;
+$download-bg: #DE3C3C;
+$search-bg: #2CC0B3;
+// button active
+$active-fc: #F8F9FC;
+$active-fbg: #0098acab;
+// button hover
+$add-hg: #348498;
+$update-hg: #FBC761;
+$del-hg: #EF5151;
+$uploading-hg: #B19366;
+$download-hg: #F87f7f;
+$search-hg: #5ee0D6;
 
 :export {
   menuText: $menuText;

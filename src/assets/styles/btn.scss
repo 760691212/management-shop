@@ -1,66 +1,42 @@
 @import './variables.scss';
 
-@mixin colorBtn($color) {
-  background: $color;
-
-  &:hover {
-    color: $color;
-
-    &:before,
-    &:after {
-      background: $color;
-    }
-  }
-}
-
-@mixin specialBtn($fc, $bg) {
+@mixin specialBtn($fc, $bg, $hg) {
   background: $bg;
   color: $fc;
   border: none;
+  box-shadow: 0 0 7px $btnShadow;
+  padding: 8px 25px !important;
   transition: 500ms ease all;
+  font-weight: bold !important;
+  letter-spacing:2px;
   &:hover {
-    color: $bg;
-    background-color: $fc;
+    color: $fc;
+    background-color: $hg;
   }
   &:focus{
-    color: $activeBtnFc;
-    background-color: $activeBtnBc;
-    transition: 500ms ease all;
+    color: $active-fc;
+    background-color: $active-fbg;
   }
 }
 
-.blue-btn {
-  @include colorBtn($blue)
+.add-btn {
+  @include specialBtn($btn-color,$add-bg,$add-hg)
 }
-
-.light-blue-btn {
-  @include colorBtn($light-blue)
+.update-btn {
+  @include specialBtn($btn-color,$update-bg,$update-hg)
 }
-
-.red-btn {
-  @include colorBtn($red)
+.del-btn {
+  @include specialBtn($btn-color,$del-bg,$del-hg)
 }
-
-.pink-btn {
-  @include colorBtn($pink)
+.uploading-btn {
+  @include specialBtn($btn-color,$uploading-bg,$uploading-hg)
 }
-
-.green-btn {
-  @include colorBtn($green)
+.download-btn {
+  @include specialBtn($btn-color,$download-bg,$download-hg)
 }
-
-.tiffany-btn {
-  @include colorBtn($tiffany)
+.search-btn {
+  @include specialBtn($btn-color,$search-bg,$search-hg)
 }
-
-.yellow-btn {
-  @include colorBtn($yellow)
-}
-
-.add-btn{
-  @include specialBtn($write, $add)
-}
-
 
 .pan-btn {
   font-size: 14px;
