@@ -19,7 +19,7 @@ $menuBg:#115363;
 $menuHover: linear-gradient(-57deg, #115363 32%, #002F3D 7%);
 
 $subMenuBg:#053944; 
-$subMenuHover: linear-gradient(-57deg, #053944 32%, #002530 7%);
+$subMenuHover: linear-gradient(-57deg, #053944 32%, #00222c 7%);
 
 $sideBarWidth: 210px;
 // breadcrumbhover
@@ -61,20 +61,20 @@ $btn-color: #F8F9FC;
 $btnShadow: #808080;
 
 $add-bg: $menuBg;
-$update-bg: #F7B32D;
+$update-bg: #0099CC;
 $del-bg: #DE1B1B;
 $uploading-bg: #623f2b;
-$download-bg: #DE3C3C;
+$download-bg: #F7B32D;
 $search-bg: #2CC0B3;
 // button active
 $active-fc: #F8F9FC;
 $active-fbg: #0098acab;
 // button hover
 $add-hg: #348498;
-$update-hg: #FBC761;
+$update-hg: #39BBE6;
 $del-hg: #EF5151;
 $uploading-hg: #B19366;
-$download-hg: #F87f7f;
+$download-hg: #FBC761;
 $search-hg: #5ee0D6;
 
 :export {

@@ -70,6 +70,8 @@
     // menu hover
     .submenu-title-noDropdown,
     .el-submenu__title {
+      height: 50px;
+      line-height: 50px;
       &:hover {
         z-index:1;
         background: transparent !important;
@@ -105,7 +107,8 @@
     & .el-submenu .el-menu-item {
       min-width: $sideBarWidth !important;
       background: $subMenuBg !important;
-
+      height: 40px;
+      line-height: 40px;
       &:hover {
         z-index:1;
         background: transparent !important;
@@ -209,7 +212,7 @@
     &.foldSidebar {
       .sidebar-container {
         pointer-events: none;
-        transition-duration: 0.3s;
+        transition-duration: 0.28s;
         transform: translate3d(-$sideBarWidth, 0, 0);
       }
     }
