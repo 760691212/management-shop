@@ -1,5 +1,5 @@
 <template>
-  <div id="tags-view-container" class="tags-view-container">
+  <div id="tags-view-container" class="tags-view-container no-select">
     <scroll-pane ref="scrollPane" class="tags-view-wrapper" @scroll="handleScroll">
       <router-link
         v-for="tag in visitedViews"
@@ -276,9 +276,9 @@ export default {
 .tags-view-wrapper {
   .tags-view-item {
     .el-icon-close {
-      width: 16px;
-      height: 16px;
-      vertical-align: 2px;
+      width: 12px;
+      height: 12px;
+      vertical-align: 1px;
       border-radius: 50%;
       text-align: center;
       transition: all .3s cubic-bezier(.645, .045, .355, 1);
@@ -286,11 +286,11 @@ export default {
       &:before {
         transform: scale(.6);
         display: inline-block;
-        vertical-align: -3px;
+        vertical-align: -1px;
       }
       &:hover {
         background-color: #b4bccc;
-        color: #fff;
+        color: rgb(0, 0, 0);
       }
     }
   }

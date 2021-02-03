@@ -1,5 +1,7 @@
 <template>
-  <div class="app-container">dash</div>
+  <div class="app-container">
+   
+  </div>
 </template>
 <script>
 export default {

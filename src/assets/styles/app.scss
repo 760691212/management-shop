@@ -355,3 +355,10 @@
   }
 }
 
+.app-context-main{
+  overflow: hidden;
+  flex-grow: 1 !important;
+  flex-shrink: 1 !important;
+  background-color: #fff;
+  flex-wrap: wrap ;
+}

@@ -1,26 +1,22 @@
 <template>
-   <section class="app-main">
-    <transition name="fade-transform" mode="out-in">
-      <keep-alive :include="cachedViews">
-        <router-view :key="key" />
-      </keep-alive>
-    </transition>
-  </section>
+  <transition name="fade-transform" mode="out-in">
+    <keep-alive :include="cachedViews">
+      <router-view :key="key" class="flex"/>
+    </keep-alive>
+  </transition>
 </template>
 <script>
 export default {
     name: 'AppMain',
     computed: {
-        cachedViews() {
+      cachedViews() {
         return this.$store.state.tagsView.cachedViews
-        },
-        key() {
+      },
+      key() {
         return this.$route.path
-        }
+      }
   }
 }
 </script>
 <style lang="scss" scoped>
-.app-main{
-}
 </style>

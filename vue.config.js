@@ -17,6 +17,7 @@ module.exports = {
   productionSourceMap: false, // 是否在构建生产包时生成 sourceMap 文件，false将提高构建速度
   devServer: {
     port: port, // 端口号
+    hot: true, //自动保存
     open: true, // 在DevServer第一次构建完成时，自动用浏览器打开网页
     overlay: { // 这个配置属性用来在编译出错的时候，在浏览器页面上显示错误
       warnings: false,

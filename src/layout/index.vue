@@ -1,15 +1,12 @@
 <template>
-  <div class="app-layout" :class="layoutStatus">
-     <sidebar class="sidebar-container" />
-      <div class="h c layout">
-        <sidebar class="sidebar-container" />
-        <div class="main-container v flex">
-          <div class="v">
-            <navbar />
-            <tags-view v-if="needTagsView"/>
-          </div>
-          <app-main class="flex"/>
-       </div>
+  <div :class="layoutStatus" class="h layout">
+    <sidebar class="sidebar-container" />
+    <div class="main-container v flex">
+      <div class="v no-flex">
+        <navbar />
+        <tags-view v-if="needTagsView"/>
+      </div>
+      <app-main class="flex"/>
     </div>
   </div>
 </template>
@@ -39,14 +36,8 @@ export default {
 <style lang="scss" scoped>
 @import "~@/assets/styles/mixin.scss";
 @import "~@/assets/styles/variables.scss";
-.app-layout{
-   @include clearfix;
-    position: relative;
-    height: 100%;
+  .layout{
     width: 100%;
-    .layout{
-      width: 100%;
-      height: 100%;
-    }
-}
+    height: 100%;
+  }
 </style>

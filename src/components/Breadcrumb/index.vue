@@ -1,5 +1,5 @@
 <template>
-    <el-breadcrumb class="app-brandcrumb no-select" separator="/">
+    <el-breadcrumb class="app-brandcrumb no-select" separator-class="el-icon-caret-right">
         <transition-group name="brandcrumb">
             <el-breadcrumb-item v-for="(item,index) in menuList" :key="item.path">
                 <span v-if="item.redirect==='noRedirect'||index==menuList.length-1" class="no-redirect">{{ item.meta.title }}</span>
@@ -68,7 +68,7 @@ export default {
     margin-left: 8px;
     .no-redirect {
         color: #97a8be;
-        cursor: text;
+        cursor: default;
     }
 }
 </style>
