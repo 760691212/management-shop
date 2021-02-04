@@ -4,19 +4,19 @@
   background: $bg;
   color: $fc;
   border: none;
-  box-shadow: 0 0 7px $btnShadow;
+  box-shadow: 0 0 5px $btnShadow;
   padding: 8px 25px !important;
   transition: 500ms ease all;
   font-weight: bold !important;
   letter-spacing:2px;
-  &:hover {
-    color: $fc;
-    background-color: $hg;
-  }
-  &:focus{
-    color: $active-fc;
-    background-color: $active-fbg;
-  }
+  // &:hover {
+  //   color: $fc;
+  //   background-color: $hg;
+  // }
+  // &:focus{
+  //   color: $active-fc;
+  //   background-color: $active-fbg;
+  // }
 }
 
 @mixin specialBtnCircle($fc, $bg, $hg) {
@@ -29,14 +29,14 @@
   font-weight: bold !important;
   letter-spacing:2px;
   text-align: center;
-  &:hover {
-    color: $fc;
-    background-color: $hg;
-  }
-  &:focus{
-    color: $active-fc;
-    background-color: $active-fbg;
-  }
+  // &:hover {
+  //   color: $fc;
+  //   background-color: $hg;
+  // }
+  // &:focus{
+  //   color: $active-fc;
+  //   background-color: $active-fbg;
+  // }
 }
 
 .add-btn {

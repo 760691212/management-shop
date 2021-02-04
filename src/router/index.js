@@ -49,7 +49,7 @@ export const constantRoutes = [
       component: Layout,
       meta: {
         title: '系统设置',
-        icon: 'el-icon-s-tools'
+        icon: 'setting'
       },
       alwaysShow: true,
       children: [{

@@ -259,9 +259,6 @@
           background: $menuHover;
           z-index:-1;
       }
-      &:hover:after,&:hover:before {
-          width: 100%;
-      }
   }
 
   // the scroll bar appears when the subMenu is too long

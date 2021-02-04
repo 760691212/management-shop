@@ -23,11 +23,20 @@
                   </template>
               </el-table-column>
           </el-table>
-          <div>123</div>
+           <el-pagination
+              @size-change="handleSizeChange"
+              @current-change="handleCurrentChange"
+              class="CRUD_pagination no-select"
+              :current-page="4"
+              :page-sizes="[100, 200, 300, 400]"
+              :page-size="100"
+              layout="total, sizes, prev, pager, next, jumper"
+              :total="400" />
       </div>
     </div>
 </template>
 <script>
+import { getMenusAll } from '@/api/system/menu'
 export default {
     name: 'Menu',
     data() {
@@ -42,12 +51,7 @@ export default {
           date: '2016-05-04',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1517 弄'
-        },  {
-          id: 2,
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        }, {
+        },{
           id: 3,
           date: '2016-05-01',
           name: '王小虎',
@@ -68,33 +72,22 @@ export default {
           date: '2016-05-03',
           name: '王小虎',
           address: '上海市普陀区金沙江路 1516 弄'
-        }],
-        tableData1: [{
-          id: 1,
-          date: '2016-05-02',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1518 弄'
-        }, {
-          id: 2,
-          date: '2016-05-04',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1517 弄'
-        }, {
-          id: 3,
-          date: '2016-05-01',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1519 弄',
-          hasChildren: true
-        }, {
-          id: 4,
-          date: '2016-05-03',
-          name: '王小虎',
-          address: '上海市普陀区金沙江路 1516 弄'
         }]
       }
     },
+    created(){
+      getMenusAll().then(res => {
+        console.log(res);
+      })
+    },
     methods: {
       handleClick(){
+
+      },
+      handleSizeChange(){
+
+      },
+      handleCurrentChange(){
 
       }
     },
@@ -106,8 +99,11 @@ export default {
     width: 100%;
     padding: 12px 0  3px 20px;
     .button{
-        margin: 0 15px;
+      margin: 0 15px;
     }
+  }
+  .CRUD_pagination{
+    padding: 15px 0 10px 12px;
   }
   .app-menu{
     padding: 7px;

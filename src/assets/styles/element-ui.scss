@@ -120,6 +120,9 @@
   border-bottom: 1px solid $tableColor;
 }
 .el-table {
+  border-color: $tableColor ;
+  border-bottom:  1px solid $tableColor;
+  color: $tableHeaderBg;
   border-radius: 5px;
   overflow: hidden;
 }
@@ -131,10 +134,17 @@
   padding: 4px 0;
   font-weight: bold;
 }
-.el-checkbox__input.is-indeterminate .el-checkbox__inner,
-.el-checkbox__input.is-checked .el-checkbox__inner{
-  border-color:  $tableCheckbox;
-  color: $tableCheckbox;
-  background-color: $tableCheckbox;
-
+.el-pagination, .el-pagination__total, .el-pagination__jump{
+  color: $menuBg;
+  font-weight: bold;
+  font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
 }
+.el-select-dropdown__item{
+  -moz-user-select: none; /*火狐*/
+  -webkit-user-select: none; /*webkit浏览器*/
+  -ms-user-select: none; /*IE10*/
+  -khtml-user-select: none; /*早期浏览器*/
+  -o-user-select: none; /* Opera*/
+  user-select: none;
+}
+
