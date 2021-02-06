@@ -7,7 +7,7 @@ function resolve(dir) {
 }
 
 const name = defaultSettings.title // 网址标题
-const port = 8013 // 端口配置
+const port = 5425 // 端口配置
 
 module.exports = {
   publicPath: '/', // 基本路径
@@ -16,6 +16,7 @@ module.exports = {
   lintOnSave: false, // 是否开启eslint保存检测， 有效值： ture | false | 'error'
   productionSourceMap: false, // 是否在构建生产包时生成 sourceMap 文件，false将提高构建速度
   devServer: {
+    disableHostCheck: true,
     port: port, // 端口号
     hot: true, //自动保存
     open: true, // 在DevServer第一次构建完成时，自动用浏览器打开网页
@@ -40,12 +41,14 @@ module.exports = {
     //   }
     // }
   },
+
   configureWebpack: {
      // 在webpack的name字段中提供应用的标题， 这样它就可以在index.html中访问， 以注入正确的标题。
     name: name,
     resolve: {
       alias: {
-        '@': resolve('src')
+        '@': resolve('src'),
+        '@crud': resolve('src/components/Crud')
       }
     }
   },

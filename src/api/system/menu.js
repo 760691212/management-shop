@@ -1,11 +1,26 @@
 import request from '@/utils/request'
 
-export function getMenusAll() {
+export function add(data) {
   return request({
-    url: 'api/menus/list',
-    method: 'get'
+    url: 'api/system/menus',
+    method: 'post',
+    data
+  })
+}
+export function edit(data) {
+  return request({
+    url: 'api/system/menus',
+    method: 'put',
+    data
+  })
+}
+export function del(ids) {
+  return request({
+    url: 'api/system/menus',
+    method: 'delete',
+    data: ids
   })
 }
 export default {
-  getMenusAll
+  add, edit, del
 }

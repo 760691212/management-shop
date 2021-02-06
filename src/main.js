@@ -19,6 +19,9 @@ Vue.use(Element, {
   // locale: enLang // 如果使用中文，无需设置，请删除
 })
 
+// 权限指令
+import permission from './components/Permission'
+
 Vue.config.productionTip = false;
 
 new Vue({

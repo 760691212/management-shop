@@ -1,6 +1,6 @@
 @import './variables.scss';
 
-@mixin specialBtn($fc, $bg, $hg) {
+@mixin specialBtn($fc, $bg) {
   background: $bg;
   color: $fc;
   border: none;
@@ -9,17 +9,9 @@
   transition: 500ms ease all;
   font-weight: bold !important;
   letter-spacing:2px;
-  // &:hover {
-  //   color: $fc;
-  //   background-color: $hg;
-  // }
-  // &:focus{
-  //   color: $active-fc;
-  //   background-color: $active-fbg;
-  // }
 }
 
-@mixin specialBtnCircle($fc, $bg, $hg) {
+@mixin specialBtnCircle($fc, $bg) {
   background: $bg;
   color: $fc;
   border: none;
@@ -29,52 +21,51 @@
   font-weight: bold !important;
   letter-spacing:2px;
   text-align: center;
-  // &:hover {
-  //   color: $fc;
-  //   background-color: $hg;
-  // }
-  // &:focus{
-  //   color: $active-fc;
-  //   background-color: $active-fbg;
-  // }
 }
 
 .add-btn {
-  @include specialBtn($btn-color,$add-bg,$add-hg)
+  @include specialBtn($btn-color,$add-bg)
 }
 .update-btn {
-  @include specialBtn($btn-color,$update-bg,$update-hg)
+  @include specialBtn($btn-color,$update-bg)
 }
 .del-btn {
-  @include specialBtn($btn-color,$del-bg,$del-hg)
+  @include specialBtn($btn-color,$del-bg)
 }
 .uploading-btn {
-  @include specialBtn($btn-color,$uploading-bg,$uploading-hg)
+  @include specialBtn($btn-color,$uploading-bg)
 }
 .download-btn {
-  @include specialBtn($btn-color,$download-bg,$download-hg)
+  @include specialBtn($btn-color,$download-bg)
 }
 .search-btn {
-  @include specialBtn($btn-color,$search-bg,$search-hg)
+  @include specialBtn($btn-color,$search-bg)
+}
+.refresh-btn {
+  @include specialBtn($btn-color,$refresh-bg)
 }
 
+
 .add-btn-circle {
-  @include specialBtnCircle($btn-color,$add-bg,$add-hg)
+  @include specialBtnCircle($btn-color,$add-bg)
 }
 .update-btn-circle {
-  @include specialBtnCircle($btn-color,$update-bg,$update-hg)
+  @include specialBtnCircle($btn-color,$update-bg)
 }
 .del-btn-circle {
-  @include specialBtnCircle($btn-color,$del-bg,$del-hg)
+  @include specialBtnCircle($btn-color,$del-bg)
 }
 .uploading-btn-circle {
-  @include specialBtnCircle($btn-color,$uploading-bg,$uploading-hg)
+  @include specialBtnCircle($btn-color,$uploading-bg)
 }
 .download-btn-circle {
-  @include specialBtnCircle($btn-color,$download-bg,$download-hg)
+  @include specialBtnCircle($btn-color,$download-bg)
 }
 .search-btn-circle {
-  @include specialBtnCircle($btn-color,$search-bg,$search-hg)
+  @include specialBtnCircle($btn-color,$search-bg)
+}
+.refresh-btn-circle {
+  @include specialBtnCircle($btn-color,$refresh-bg)
 }
 
 .pan-btn {

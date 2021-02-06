@@ -2,8 +2,8 @@ import merge from "webpack-merge";
 
 const config = {
   hosts: {
-    resource: "",
-    request: ""
+    resource: "http://manage.shop.com/",
+    request: "http://api.shop.com"
   }
 };
 
