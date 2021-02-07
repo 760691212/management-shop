@@ -176,23 +176,23 @@ export default {
       idFileld: 'menu_id',
       size: 20,
       url: "api/system/menus/query",
-      crudMethid: { ...crudMenu },
+      hideOnSinglePage: true,
+      crudMethod: { ...crudMenu },
       optShow: {
         add: true,
         edit: true,
         del: true,
-        download: true,
-      },
-      debug: true
+        download: false,
+      }
     })
   },
   mixins: [presenter(), header(), form(defaultForm)],
   data() {
     return {
         permission: {
-        add: ["a05:add"],
-        edit: ["a05:edit"],
-        del: ["a05:del"],
+          add: ["a05:add"],
+          edit: ["a05:edit"],
+          del: ["a05:del"],
       },
       types: ['菜单', '目录', '按钮'],
       rules: {},

@@ -1,8 +1,16 @@
 import request from '@/utils/request'
 
+export function query(data) {
+  return request({
+    url: 'api/system/menus/query',
+    method: 'post',
+    data
+  })
+}
+
 export function add(data) {
   return request({
-    url: 'api/system/menus/list',
+    url: 'api/system/menus/add',
     method: 'post',
     data
   })
@@ -22,5 +30,5 @@ export function del(ids) {
   })
 }
 export default {
-  add, edit, del
+  add, edit, del, query
 }

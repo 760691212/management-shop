@@ -1,5 +1,5 @@
 import { initData, download } from '@/api/data'
-import { parseTime, downloadFile } from '@/utils/index'
+import { parseTime,  downloadFile } from '@/utils/index'
 import Vue from 'vue'
 
 /**
@@ -32,7 +32,7 @@ function CRUD(options) {
     pagination: true,
     store: null,
     hideOnSinglePage: false,
-    pageLayout: "total, sizes, prev, pager, next, jumper",
+    pageLayout: "total, prev, pager, next, sizes",
     appendDataMode: false,
     editable: true,
     page: {
@@ -46,17 +46,17 @@ function CRUD(options) {
     // Form 表单
     form: {},
     // 重置表单
-    defaultForm: () => { },
+    defaultForm: () => {},
     // 排序规则，默认 id 降序， 支持多字段排序 ['id,desc', 'createTime,asc']
     sort: [],
     // 等待时间
     time: 50,
     // CRUD Method
     crudMethod: {
-      add: (form) => { },
-      del: (id) => { },
-      edit: (form) => { },
-      get: (id) => { }
+      add: (form) => {},
+      del: (id) => {},
+      edit: (form) => {},
+      get: (id) => {}
     },
     // 主页操作栏显示哪些按钮
     optShow: {
@@ -64,7 +64,7 @@ function CRUD(options) {
       edit: true,
       del: true,
       download: true,
-      import:false,
+      import: false,
       reset: true,
       columns: true
     },
@@ -419,9 +419,9 @@ function CRUD(options) {
     doimport() {
 
       // download(crud.url + '/import', crud.getQueryParams()).then(result => {
-        
+
       // }).catch(() => {
-        
+
       // })
     },
     /**
@@ -499,6 +499,7 @@ function CRUD(options) {
      */
     resetDataStatus() {
       const dataStatus = {}
+
       function resetStatus(datas) {
         datas.forEach(e => {
           dataStatus[crud.getDataId(e)] = {
@@ -541,7 +542,9 @@ function CRUD(options) {
      */
     selectChange(selection, row) {
       // 如果selection中存在row代表是选中，否则是取消选中
-      if (selection.find(val => { return crud.getDataId(val) === crud.getDataId(row) })) {
+      if (selection.find(val => {
+          return crud.getDataId(val) === crud.getDataId(row)
+        })) {
         if (row.children) {
           row.children.forEach(val => {
             crud.getTable().toggleRowSelection(val, true)
@@ -754,7 +757,7 @@ function lookupCrud(vm, tag) {
  */
 function presenter(crud) {
   if (crud) {
-    console.warn('[CRUD 错误]: ' + 'please use $options.cruds() { return CRUD(...) or [CRUD(...), ...] }')
+    console.warn('[CRUD warn]: ' + 'please use $options.cruds() { return CRUD(...) or [CRUD(...), ...] }')
   }
   return {
     data() {
