@@ -28,7 +28,6 @@
 <script>
 import ScrollPane from './ScrollPane'
 import path from 'path'
-import { log } from 'util'
 
 export default {
   components: { ScrollPane },

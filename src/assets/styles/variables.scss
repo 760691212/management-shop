@@ -39,7 +39,8 @@ $clockTextBrightness: rgba(119, 178, 218, 0.295);
 // LoginUser
 $loginUserColor: $hamburgerColor;
 // tagsView
-$activetagsViewBg: #115363;
+
+$activetagsViewBg: #0081a1;
 $activetagsViewfontColor: #fff;
 $activecontextmenuBg: $navbarBg;
 $activecontextmenufc: #1facc5;
@@ -62,7 +63,7 @@ $cteMainBg: rgb(241, 241, 241);
 $btn-color: #F8F9FC;
 $btnShadow: #b5c6ccc4;
 
-$add-bg: $menuBg;
+$add-bg: #0081a1;
 $update-bg: #0099CC;
 $del-bg: #DE1B1B;
 $uploading-bg: #623f2b;
@@ -83,7 +84,6 @@ $active-fbg: #13cfa6;
 // table
 $tableColor: #1facc586; 
 $tableHeaderBg:#0081a1; 
-$tableCheckbox: $menuBg;
 
 :export {
   menuText: $menuText;

@@ -63,12 +63,24 @@
   }
 }
 
-// to fixed https://github.com/ElemeFE/element/issues/2461
 .el-dialog {
-  transform: none;
-  left: 0;
-  position: relative;
-  margin: 0 auto;
+  border-radius: 10px;
+  border: 2px solid $tableHeaderBg;
+  box-shadow: 0 0 5px  $tableHeaderBg inset;
+  overflow: hidden;
+  .el-dialog__header, .el-dialog__footer{
+    padding: 10px 20px;
+  }
+  .el-dialog__title, .el-dialog__close, .el-form-item__label{
+     color: $tableHeaderBg;
+     font-weight: 500;
+  }
+  .el-dialog__headerbtn{
+    margin-top: -1ex;
+  }
+  .el-dialog__body{
+    padding: 0 20px
+  }
 }
 
 // refine element ui upload
@@ -135,11 +147,11 @@
   font-weight: bold;
 }
 .el-pagination, .el-pagination__total, .el-pagination__jump{
-  color: $menuBg;
+  color: $tableHeaderBg;
   font-weight: bold;
   font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
 }
-.el-select-dropdown__item{
+.el-select-dropdown__item, .el-dialog__title, .el-dialog__body{
   -moz-user-select: none; /*火狐*/
   -webkit-user-select: none; /*webkit浏览器*/
   -ms-user-select: none; /*IE10*/
