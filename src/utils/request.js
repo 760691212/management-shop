@@ -26,7 +26,7 @@ service.interceptors.request.use(
     }
     // 如果 没有 token
     if (config.noToken !== true && getToken()){
-      config.headers['Authorization_SHOP'] = getToken() // 让每个请求携带自定义token
+      config.headers['CONTENT-SHOP-MANAGE-TYPE'] = getToken() // 让每个请求携带自定义token
     }
     config.headers['Content-Type'] = 'application/json'
     return config

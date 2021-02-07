@@ -2,7 +2,7 @@ import request from '@/utils/request'
 
 export function add(data) {
   return request({
-    url: 'api/system/menus',
+    url: 'api/system/menus/list',
     method: 'post',
     data
   })
