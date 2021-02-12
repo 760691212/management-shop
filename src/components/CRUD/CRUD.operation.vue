@@ -1,5 +1,5 @@
 <template>
-  <div class="crud-opts no-selected">
+  <div class="crud-opts">
     <span class="crud-opts-left">
       <!--左侧插槽-->
       <slot name="left" />

@@ -1,5 +1,5 @@
 import { initData, download } from '@/api/data'
-import { parseTime,  downloadFile } from '@/utils/index'
+import { parseTime, downloadFile } from '@/utils/index'
 import Vue from 'vue'
 
 /**
@@ -46,17 +46,17 @@ function CRUD(options) {
     // Form 表单
     form: {},
     // 重置表单
-    defaultForm: () => {},
+    defaultForm: () => { },
     // 排序规则，默认 id 降序， 支持多字段排序 ['id,desc', 'createTime,asc']
     sort: [],
     // 等待时间
     time: 50,
     // CRUD Method
     crudMethod: {
-      add: (form) => {},
-      del: (id) => {},
-      edit: (form) => {},
-      get: (id) => {}
+      add: (form) => { },
+      del: (id) => { },
+      edit: (form) => { },
+      get: (id) => { }
     },
     // 主页操作栏显示哪些按钮
     optShow: {
@@ -64,7 +64,7 @@ function CRUD(options) {
       edit: true,
       del: true,
       download: true,
-      import: false,
+      import:false,
       reset: true,
       columns: true
     },
@@ -159,15 +159,15 @@ function CRUD(options) {
               table.store.states.treeData = {}
               table.store.states.lazyTreeNodeMap = {}
             }
-            if (data && data.content) {
-              let transferData = callVmHookWithResult(crud, CRUD.HOOK.afterLoad, data.content);
-              let ds = transferData || data.content;
+            if (data && data.data) {
+              let transferData = callVmHookWithResult(crud, CRUD.HOOK.afterLoad, data.data.content);
+              let ds = transferData || data.data.content;
               if (crud.appendDataMode) {
                 crud.data = (crud.data || []).concat(ds);
               } else {
                 crud.data = ds;
               }
-              crud.page.total = data.totalElements;
+              crud.page.total = data.data.total;
             } else {
               let transferData = callVmHookWithResult(crud, CRUD.HOOK.afterLoad, data);
               // crud.data = transferData || data;
@@ -177,7 +177,7 @@ function CRUD(options) {
               } else {
                 crud.data = ds;
               }
-              crud.page.total = data.length;
+              crud.page.total = data.data.content.length;
             }
             crud.resetDataStatus()
 
@@ -315,18 +315,27 @@ function CRUD(options) {
      * 执行添加
      */
     doAdd(callback) {
+      // 注册提交之前的钩子
       if (!callVmHook(crud, CRUD.HOOK.beforeSubmit)) {
         return
       }
       crud.status.add = CRUD.STATUS.PROCESSING
       crud.crudMethod.add(crud.form).then(res => {
-        crud.status.add = CRUD.STATUS.NORMAL
-        crud.resetForm()
-        crud.addSuccessNotify()
-        callVmHook(crud, CRUD.HOOK.afterSubmit, res)
-        crud.toQuery()
+        // 改变弹出框状态
+        crud.status.add = CRUD.STATUS.NORMAL;
+        // 弹出页面提示
+        // crud.addSuccessNotify();
+        crud.notify(crud.msg.add, CRUD.NOTIFICATION_TYPE.SUCCESS)
+        // 注册 提交之后的钩子
+        callVmHook(crud, CRUD.HOOK.afterSubmit, res);
+        // 重置表单
+        crud.resetForm();
+        // 执行查询
+        crud.toQuery();
+        // 执行新增时可以传入函数，在新增、查询之后 执行传入函数
         if (typeof callback === "function") callback(res);
       }).catch(() => {
+        // 执行新增失败后的钩子
         crud.status.add = CRUD.STATUS.PREPARED
         callVmHook(crud, CRUD.HOOK.afterAddError)
       })
@@ -402,27 +411,7 @@ function CRUD(options) {
         crud.downloadLoading = false
       })
     },
-    // handleChange(file, fileList){
-    //   this.fileTemp = file.raw;
-    //   if(this.fileTemp){
-    //         if((this.fileTemp.type == 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet') 
-    //             || (this.fileTemp.type == 'application/vnd.ms-excel')){
-    //             this.importfxx(this.fileTemp);
-    //         } else {
-    //             this.$Message.error('附件格式错误，请删除后重新上传！')
-    //         }
-    //     } else {
-    //         this.$Message.error('请上传附件！')
-    //     }
-
-    // },
     doimport() {
-
-      // download(crud.url + '/import', crud.getQueryParams()).then(result => {
-
-      // }).catch(() => {
-
-      // })
     },
     /**
      * 获取查询参数
@@ -499,7 +488,6 @@ function CRUD(options) {
      */
     resetDataStatus() {
       const dataStatus = {}
-
       function resetStatus(datas) {
         datas.forEach(e => {
           dataStatus[crud.getDataId(e)] = {
@@ -542,9 +530,7 @@ function CRUD(options) {
      */
     selectChange(selection, row) {
       // 如果selection中存在row代表是选中，否则是取消选中
-      if (selection.find(val => {
-          return crud.getDataId(val) === crud.getDataId(row)
-        })) {
+      if (selection.find(val => { return crud.getDataId(val) === crud.getDataId(row) })) {
         if (row.children) {
           row.children.forEach(val => {
             crud.getTable().toggleRowSelection(val, true)
@@ -577,7 +563,7 @@ function CRUD(options) {
       return crud.vms.find(vm => vm && vm.type === type).vm
     },
     notify(message, type = CRUD.NOTIFICATION_TYPE.INFO) {
-      crud.vms[0].vm.$toast[type](message.replace("{title}", crud.title))
+      crud.vms[0].vm.$opNotice[type](message.replace("{title}", crud.title))
     },
     updateProp(name, value) {
       Vue.set(crud.props, name, value)
