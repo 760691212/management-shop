@@ -160,3 +160,41 @@
   user-select: none;
 }
 
+
+.login-form>.el-form{
+  .el-form-item{
+    margin-bottom: 30px;
+    .el-form-item__label{
+      color: rgb(81, 223, 241);
+    }
+    .el-form-item__content{
+       >.el-input>.el-input__inner{
+        background-color: rgb(0, 34, 85);
+        border: 2px solid rgb(5, 76, 131);
+        width: 350px;
+        &:hover{
+          border: 2px solid rgb(81, 223, 241);
+        }
+        color: rgb(81, 223, 241);
+      }
+      >.operation{
+        >.el-checkbox{
+          border: 2px solid rgb(5, 76, 131);
+          color: rgb(81, 223, 241);
+          background-color: rgb(0, 34, 85);
+          margin-right: 15px;
+        }
+        >.el-input>.el-input__inner{
+          background-color: rgb(0, 34, 85);
+          border: 2px solid rgb(5, 76, 131);
+          width: 150px;
+          &:hover{
+            border: 2px solid rgb(81, 223, 241);
+          }
+          color: rgb(81, 223, 241);
+        }
+      }
+      
+    }
+  }
+}
