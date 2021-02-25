@@ -1,4 +1,4 @@
-import { constantRoutes } from '@/router'
+import { constantRoutes } from '@/router/router.js'
 import Layout from '@/layout/index'
 
 const state = {

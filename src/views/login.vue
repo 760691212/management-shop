@@ -15,11 +15,12 @@
               <el-checkbox v-model="form.rememberMe" label="记住密码" border></el-checkbox>
               <el-input v-model.trim="form.code" v-if="code"></el-input>
               <div class="code" v-if="code">
-                {{code}}
+                <img :src="code" @click="getCode">
               </div>
             </div>
           </el-form-item>
-          <div class="login-btn" @click="login">登录</div>
+          <div v-if="!loading" class="login-btn" @click="login">登录</div>
+          <div v-else class="login-btn-loading">登录中...</div>
         </el-form>
       </div>
     </div>
@@ -48,8 +49,8 @@ export default {
         readerme: '',
         code: '',
         rememberMe: false,
-        uuid: "",
       },
+      loading: false,
       headerTitle: '',
       rules: {
         username: [{ required: true, message: "请输入用户名", trigger: "blur" }],
@@ -98,11 +99,9 @@ export default {
       };
     },
     getCode(){
-       getCodeImg().then((res) => {
-        // let img = new Image();
-        this.codeUrl = res.str;
-        this.form.uuid = res.uuid;
-      });
+      getCodeImg().then(res => {
+        this.code = window.URL.createObjectURL(res)
+      })
     },
     login(){
        this.$refs.form.validate((valid) => {
@@ -111,41 +110,33 @@ export default {
           password: this.form.password,
           rememberMe: this.form.rememberMe,
           code: this.form.code,
-          uuid: this.form.uuid,
         };
-        // if (user.password !== this.cookiePass) {
-        //   user.password = encrypt(user.password);
-        // }
-        // if (valid) {
-        //   this.loading = true;
-        //   if (user.rememberMe) {
-        //     Cookies.set("username", user.username, {
-        //       expires: Config.passCookieExpires,
-        //     });
-        //     Cookies.set("password", user.password, {
-        //       expires: Config.passCookieExpires,
-        //     });
-        //     Cookies.set("rememberMe", user.rememberMe, {
-        //       expires: Config.passCookieExpires,
-        //     });
-        //   } else {
-        //     Cookies.remove("username");
-        //     Cookies.remove("password");
-        //     Cookies.remove("rememberMe");
-        //   }
-        //   this.$store
-        //     .dispatch("Login", user)
-        //     .then(() => {
-        //       this.loading = false;
-        //       // this.$router.push({ path: this.redirect || "/" });
-        //     })
-        //     .catch(() => {
-        //       this.loading = false;
-        //       this.getCode();
-        //     });
-        // } else {
-        //   return false;
-        // }
+        if(valid){
+          this.loading = true;
+          if(user.rememberMe){
+            Cookies.set("username", user.username, {
+              expires: settings.passCookieExpires
+            });
+             Cookies.set("password", user.password, {
+              expires: settings.passCookieExpires
+            });
+             Cookies.set("rememberMe", user.rememberMe, {
+              expires: settings.passCookieExpires
+            });
+          }else{
+              Cookies.remove("username");
+              Cookies.remove("password");
+              Cookies.remove("rememberMe");
+          }
+          this.$store.dispatch("Login",user).then(() =>{
+             this.loading = false;
+          }).catch(() => {
+              this.loading = false;
+              this.getCode();
+          });
+        }else{
+          return false
+        }
       });
     }
   }
@@ -187,22 +178,32 @@ export default {
       background-image: url(../assets/images/loginForm.png);
       background-size: 100% 100%;
       padding: 80px;
-      .login-btn{
+
+      .login-btn, .login-btn-loading{
         width: 240px;
         height: 30px;
         line-height: 30px;
         margin: 0 auto;
-        padding-left: 90px;
         color: rgb(81, 223, 241);
         font-weight: bolder;
-        background-color: rgb(0, 56, 109);
         box-shadow: 0 0 10px rgba(0, 13, 37, 0.5);
         border-radius: 15px;
-        letter-spacing: 30px;
-        cursor: pointer;
-        &:hover{
-          background-color: rgb(0, 85, 165);
-        }
+        
+      }
+      .login-btn{
+          padding-left: 90px;
+          letter-spacing: 30px;
+          background-color: rgb(0, 56, 109);
+          cursor: pointer;
+          &:hover{
+            background-color: rgb(0, 85, 165);
+          }
+      }
+      .login-btn-loading{
+        padding-left: 80px;
+        letter-spacing: 5px;
+        cursor: not-allowed;
+        background-color: rgb(0, 85, 165);
       }
     }
     .code{
@@ -212,6 +213,7 @@ export default {
       margin-right: 11px;
       border-radius: 4px;
       background-color: rgb(0, 60, 145);
+      cursor: pointer;
     }
   }
   /* star field */

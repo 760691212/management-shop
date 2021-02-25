@@ -28,7 +28,7 @@ const actions = {
     Login({ commit }, userInfo) {
       const rememberMe = userInfo.rememberMe
       return new Promise((resolve, reject) => {
-        login(userInfo.username, userInfo.password, userInfo.code, userInfo.uuid).then(res => {
+        login(userInfo.username, userInfo.password, userInfo.code).then(res => {
           // 存储cookie
           setToken(res.user, rememberMe)
           // 存储 store  

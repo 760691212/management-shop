@@ -22,7 +22,8 @@ export function getInfo() {
 
 export function getCodeImg() {
   return request({
-    url: 'auth/code',
+    responseType: 'blob',
+    url: 'api/auth/login/getCaptcha',
     method: 'get'
   })
 }

@@ -50,24 +50,33 @@ export const constantRoutes = [
       }
     }]
   },
-  //   {
-  //     path: '/system',
-  //     component: Layout,
-  //     meta: {
-  //       title: '系统设置',
-  //       icon: 'setting'
-  //     },
-  //     alwaysShow: true,
-  //     children: [{
-  //       path: 'menu',
-  //       component: () => import('@/views/system/menu/index'),
-  //       name: 'Menu',
-  //       meta: {
-  //         title: '菜单管理',
-  //         icon: 'menu'
-  //       }
-  //     }],
-  // }
+    {
+      path: '/system',
+      component: Layout,
+      meta: {
+        title: '系统设置',
+        icon: 'setting'
+      },
+      alwaysShow: true,
+      children: [{
+        path: 'menu',
+        component: () => import('@/views/system/menu/index'),
+        name: 'Menu',
+        meta: {
+          title: '菜单管理',
+          icon: 'menu'
+        }
+      }, 
+      {
+        path: 'user',
+        component: () => import('@/views/system/user/index'),
+        name: 'User',
+        meta: {
+          title: '人员管理',
+          icon: 'sysUser'
+        }
+      }],
+  }
 ]
 
 const createRouter = () => new Router({
